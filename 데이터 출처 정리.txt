@@ -4,6 +4,8 @@
 
 통계청. (2023). 「노후주택비율」. KOSIS 국가통계포털. https://kosis.kr/visual/eRegionJipyo/themaJipyo/eRegionJipyoThemaJipyoView.do?themaId=A_01_04&menuThemaId=A_01_04_03&jipyoId=5594_6991
 
-국토교통부. (2024). 면적별 건축물 현황 (2019~2024). 국가통계포털(KOSIS).
+국토교통부. (2024). 면적별 건축물 현황 (2019 - 2024). 국가통계포털(KOSIS).
 https://kosis.kr/statHtml/statHtml.do?tblId=DT_MLTM_540&orgId=116
 
+통계청. (2025). 인구밀도 (인구주택총조사 기준) – 시도별 (2019 - 2024). 국가통계포털(KOSIS). 
+https://kosis.kr/statHtml/statHtml.do?tblId=DT_1B08024&orgId=101

@@ -1,10 +1,17 @@
+import calendar
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+
+year = 2024
+days_in_2023 = 366 if calendar.isleap(year) else 365
+print(days_in_2023)
 
 # weather = pd.read_csv('./데이터/온도습도강수풍속 데이터/남영동/남영동_강수_202301_202312.csv')
 fireDf = pd.read_csv('./데이터/화재 데이터/전국 다중이용업소 데이터셋_통합본.csv')
 yongSanFireDf = fireDf[fireDf['상호주소'].str.contains('서울특별시 용산구', na=False)]
 print(yongSanFireDf)
+
+# for day in range(days_in_2023):
 
 
 # x = [[1, 2, 4, 2],

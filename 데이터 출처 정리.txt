@@ -9,3 +9,5 @@ https://kosis.kr/statHtml/statHtml.do?tblId=DT_MLTM_540&orgId=116
 
 통계청. (2025). 인구밀도 (인구주택총조사 기준) – 시도별 (2019 - 2024). 국가통계포털(KOSIS). 
 https://kosis.kr/statHtml/statHtml.do?tblId=DT_1B08024&orgId=101
+
+통계청. (2023). 「지역별 면적 (인구주택총조사 기준)」. KOSIS 국가통계포털. https://kosis.kr/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3FtblId%3DDT_1ZGA17%26orgId%3D101%26

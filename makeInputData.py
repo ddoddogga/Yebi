@@ -17,7 +17,7 @@ def makeToAverageCsv(filePath):
 
     rows_to_drop = []
     for row in df.itertuples():
-        if("Start" in row.day):
+        if "Start" in row.day:
             month += 1
             rows_to_drop.append(row.Index)  # 삭제할 인덱스 저장
         else:
@@ -27,7 +27,8 @@ def makeToAverageCsv(filePath):
 
     df = df.drop(index=rows_to_drop)
 
-    df.loc[df['value'] < 0, 'value'] = None
+    if "기온" not in os.path.basename(filePath):
+        df.loc[df['value'] < 0, 'value'] = None
 
     average_df = df.groupby('day', as_index=False)['value'].mean()
 
@@ -38,24 +39,35 @@ def makeToAverageCsv(filePath):
     "풍속": "풍속_평균.csv",
     }
 
-    fileName = "default_data.csv"
+    newFileName = ""
     for key, name in keywords.items():
-        if key in filePath:
-            fileName = name
+        if key in os.path.basename(filePath):
+            newFileName = name
             break
     folder = os.path.dirname(filePath)  # 폴더 경로만 추출
-    newFilePath = os.path.join(folder, fileName)
+    newFilePath = os.path.join(folder, newFileName)
     
     average_df.to_csv(newFilePath, index=False, encoding="utf-8-sig")
 
-def main():
-    root_dir = "데이터"  # 탐색할 최상위 폴더
+def delete_csvs(delFileName, root_dir):
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        for filename in filenames:
+            if filename == delFileName:
+                file_path = os.path.join(dirpath, filename)
+                os.remove(file_path)
+                print(f"삭제됨: {file_path}")
+
+def makeAllAverageCsv():
+    root_dir = "데이터/온도습도강수풍속 데이터"  # 탐색할 최상위 폴더
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
             if filename.endswith(".csv"):  # csv 파일만 처리
                 full_path = os.path.join(dirpath, filename)
                 makeToAverageCsv(full_path)
+
+def main():
+    makeAllAverageCsv()    
     
 
 main()

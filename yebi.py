@@ -11,18 +11,12 @@ fireDf = pd.read_csv('./데이터/화재 데이터/전국 다중이용업소 데
 yongSanFireDf = fireDf[fireDf['상호주소'].str.contains('서울특별시 용산구', na=False)]
 print(yongSanFireDf)
 
-# 일단 남영동만
-for day in range(days_in_year):
-    
-
-
-# x = [[1, 2, 4, 2],
-#      [1, 2, 3, 4]]
-# y = [1, 0]
+x = pd.read_csv("")
+y = pd.read_csv("")
 # # random_state에 값을 할당하면(난수 시드값 고정) 결과가 고정됨.
-# clf = RandomForestClassifier(random_state=0)
+clf = RandomForestClassifier(random_state=0)
 # # 용산구 동자동은 남영동에 속함
 
-# clf.fit(x, y)
+clf.fit(x, y)
 
-# print(clf.predict([[3, 4, 50, 4]]))
+print(clf.predict([[3, 4, 50, 4]]))

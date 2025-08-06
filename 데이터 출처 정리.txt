@@ -1,6 +1,6 @@
 기상청. (2025). 「동네예보 초단기실황」. 기상자료개방포털. https://data.kma.go.kr/data/rmt/rmtList.do?code=400&pgmNo=570
 
-소방청. (2025). 「전국 다중이용업소 현황」. 소방안전 빅데이터 플랫폼. https://www.bigdata-119.kr/goods/goodsInfo?goods_mng_sn=461
+소방청. (2025). 「전국 화재 현황」. 소방안전 빅데이터 플랫폼. https://www.bigdata-119.kr/goods/goodsInfo?goods_mng_sn=458
 
 통계청. (2023). 「노후주택비율」. KOSIS 국가통계포털. https://kosis.kr/visual/eRegionJipyo/themaJipyo/eRegionJipyoThemaJipyoView.do?themaId=A_01_04&menuThemaId=A_01_04_03&jipyoId=5594_6991
 

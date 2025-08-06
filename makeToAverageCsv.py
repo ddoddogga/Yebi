@@ -12,25 +12,25 @@ def makeToAverageCsv(filePath):
     month = 1
     day = 0
 
-    df.columns = ["day", "hour", "value"]
-    df = df[["day", "value"]]
+    df.columns = ["date", "hour", "value"]
+    df = df[["date", "value"]]
 
     rows_to_drop = []
     for row in df.itertuples():
-        if "Start" in row.day:
+        if "Start" in row.date:
             month += 1
             rows_to_drop.append(row.Index)  # 삭제할 인덱스 저장
         else:
-            day = int(row.day)
+            day = int(row.date)
         date_str = f"{year}{month:02d}{day:02d}"
-        df.at[row.Index, 'day'] = date_str
+        df.at[row.Index, 'date'] = date_str
 
     df = df.drop(index=rows_to_drop)
 
     if "기온" not in os.path.basename(filePath):
         df.loc[df['value'] < 0, 'value'] = None
 
-    average_df = df.groupby('day', as_index=False)['value'].mean()
+    average_df = df.groupby('date', as_index=False)['value'].mean()
 
     keywords = {
     "강수": "강수_평균.csv",
@@ -62,7 +62,7 @@ def makeAllAverageCsv():
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
-            if filename.endswith(".csv"):  # csv 파일만 처리
+            if filename.endswith("202312.csv"):  # csv 파일만 처리
                 full_path = os.path.join(dirpath, filename)
                 makeToAverageCsv(full_path)
 

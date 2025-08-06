@@ -18,8 +18,8 @@ def mergeWeatherCsv(root_dir):
     humi.rename(columns={'value': 'humi'}, inplace=True)
     wind.rename(columns={'value': 'wind'}, inplace=True)
 
-    # day 기준으로 차례대로 merge
-    df = rain.merge(temp, on='day').merge(humi, on='day').merge(wind, on='day')
+    # date 기준으로 차례대로 merge
+    df = rain.merge(temp, on='date').merge(humi, on='date').merge(wind, on='date')
 
     # # 결과 확인
     # print(df)

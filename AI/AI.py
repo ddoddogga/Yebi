@@ -33,7 +33,7 @@ def create_model(location):
     target = df['fire_count']
 
     # 학습 & 테스트 데이터 분할
-    train_input, test_input, train_output, test_output = train_test_split(feature, target, test_size = 0.3, random_state = 42)
+    train_input, test_input, train_output, test_output = train_test_split(feature, target, test_size = 0.2, random_state = 42)
 
     # 모델 생성
     model = RandomForestRegressor(n_estimators = 100, random_state = 42)

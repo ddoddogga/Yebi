@@ -3,6 +3,7 @@ import uvicorn # FastAPI 서버를 실행하기 위한 ASGI 서버
 from datetime import datetime as dt
 import pandas as pd
 import joblib
+import Crawl
 
 def get_season(month):
     if month in [3, 4, 5]:
@@ -28,11 +29,9 @@ async def webhook(request: Request): # 비동기 실행
     weekday = now.weekday()
     season = get_season(month)
 
-    # 강수량, 기온, 습도, 풍속 불러오기 (나중에 웹 크롤링으로 날씨 불러오기)
-    rain = 1.1
-    temp = 8.18
-    humi = 10.16
-    wind = 3.5
+    # 강수량, 기온, 습도, 풍속 불러오기
+    rain, temp, humi, wind = Crawl.get_weather(location)
+    print(f'INFO\t  Get weather: {rain} {temp} {humi} {wind}')
 
     # 입력값 생성하기
     input_value = pd.DataFrame([{
@@ -54,7 +53,7 @@ async def webhook(request: Request): # 비동기 실행
         risk_level = int(round(prediction))
 
     except:
-        risk_level = 0
+        risk_level = -1
         print('INFO:\t  Get model failed')
 
     response = { # 응답

@@ -36,6 +36,7 @@ def Allmerge():
             if dirname.endswith("동"):  # 동 폴더만 처리
                 full_path = os.path.join(dirpath, dirname)
                 mergeWeatherCsv(full_path)
+    print("완료")
                 
 def main():
     Allmerge()
